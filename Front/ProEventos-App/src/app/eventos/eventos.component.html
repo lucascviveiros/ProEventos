@@ -1,0 +1,20 @@
+<h1>Eventos Component</h1>
+
+<!--
+    Exemplo de acesso a objeto
+    <p>{{evento.Tema}}</p> 
+-->
+
+<!-- exemplo de acesso a lista de forma direta
+<p> <b>Tema: </b>{{eventos[0].Tema}}</p>
+<p> <b>Local: </b>{{eventos[0].Local}}</p>
+<p>{{eventos[2].Tema}}</p>
+<p>{{eventos[2].Local}}</p>
+-->
+
+<!--exemplo usando diretiva loop-->
+
+<div *ngFor="let evento of eventos">
+    <p> <b>Tema: </b>{{evento.Tema}}</p>
+    <p> <b>Local: </b>{{evento.Local}}</p>
+</div>
