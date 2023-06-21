@@ -12,9 +12,16 @@
 <p>{{eventos[2].Local}}</p>
 -->
 
-<!--exemplo usando diretiva loop-->
+<!--exemplo usando diretiva loop
 
 <div *ngFor="let evento of eventos">
     <p> <b>Tema: </b>{{evento.tema}}</p>
     <p> <b>Local: </b>{{evento.local}}</p>
-</div>
+</div>-->
+
+
+<div *ngFor="let evento of eventos ">
+    <p><b>Tema: </b>{{ evento.tema }}</p>
+    <p><b>Local: </b>{{ evento.local }}</p>
+  </div>
+  

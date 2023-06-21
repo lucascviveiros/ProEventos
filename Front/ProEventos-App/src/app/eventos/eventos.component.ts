@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class EventosComponent implements OnInit {
 
   //exemlo de obj
-  public eventos: any = {
-    
-  }
-
+  //public eventos: any = {}
+  
+  //Exemplo de array
+  public eventos: any[] = []; // Initialize as an empty array
+/*
   public getEventos(): void 
   {
     this.http.get('https://localhost:7007/api/evento').subscribe(
@@ -20,6 +21,25 @@ export class EventosComponent implements OnInit {
       error => console.log(error)
     );
 
+  } */
+
+  public getEventos(): void {
+    this.http.get('https://localhost:7007/api/evento').subscribe(
+      response => {
+        // Convert the eventos object into an array
+        this.eventos = Object.values(response);
+      },
+      error => console.log(error)
+    );
+  }
+
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    //always add the methods on Ng
+    //NG is interpreted before html
+    this.getEventos();
   }
 
   /*
@@ -41,15 +61,6 @@ export class EventosComponent implements OnInit {
     }
   ]
   }*/
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    //always add the methods on Ng
-    //NG is interpreted before html
-    this.getEventos();
-  }
-
 
 
 }
